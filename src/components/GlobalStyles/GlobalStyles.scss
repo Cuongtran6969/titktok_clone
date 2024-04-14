@@ -3,6 +3,7 @@
 
 :root {
   --primary: #fe2c55;
+  --default-layout-header-height: 6rem;
 }
 html {
   font-size: 62.5%;
@@ -12,4 +13,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+}
+header {
+  padding: 1rem;
 }
