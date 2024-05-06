@@ -1,10 +1,9 @@
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faMessage } from '@fortawesome/free-regular-svg-icons';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 function Header() {
     return (
@@ -84,6 +83,12 @@ function Header() {
             <div className={cx('header-search')}>
                 <div className={cx('header-search_box')}>
                     <input placeholder='Tìm kiếm' />
+                    <div className={cx('input-remove_icon')}>
+                        <FontAwesomeIcon icon={faCircleXmark} />
+                    </div>
+                    {/* <div className={cx('input-process_icon')}>
+                        <FontAwesomeIcon icon={faSpinner} />
+                    </div> */}
                     <span className={cx('header-input_spliter')}></span>
                     <button>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
