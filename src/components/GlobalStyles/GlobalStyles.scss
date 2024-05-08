@@ -3,6 +3,7 @@
 
 :root {
   --primary: #fe2c55;
+  --text-colorPrimary: rgba(22, 24, 35, 1);
   --default-layout-header-height: 6rem;
 }
 html {
@@ -14,6 +15,9 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   margin: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 li {
@@ -30,15 +34,4 @@ li {
   width: 100%;
 }
 .main-content-home {
-  position: relative;
-  margin: 0px auto;
-  width: 100%;
-  min-width: 420px;
-  flex-shrink: 1;
-  display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
 }

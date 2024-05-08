@@ -2,12 +2,13 @@
   position: fixed;
   top: var(--default-layout-header-height);
   left: 0;
-  width: 240px;
+  max-width: 240px;
   height: calc(100% - 6rem);
   bottom: 5rem;
-  padding-left: 0.8rem;
-  overflow-y: overlay;
-  z-index: -1;
+  padding: 0 0.8rem;
+  overflow-y: hidden;
+  z-index: 100;
+  box-sizing: border-box;
   &:hover {
     overflow-y: overlay;
   }

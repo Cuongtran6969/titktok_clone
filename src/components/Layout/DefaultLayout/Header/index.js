@@ -1,11 +1,16 @@
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
 import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { faMessage } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import Tippy from '@tippyjs/react/headless';
+import { useState } from 'react';
+import { Wrapper as ProperWrapper } from '~/components/Proper';
+import AccountItem from '~/components/AccountItem';
 const cx = classNames.bind(styles);
 function Header() {
+    const [searchResult, setSearch] = useState(["Abc"])
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('header-logo')}>
@@ -81,19 +86,35 @@ function Header() {
                 </svg>
             </div>
             <div className={cx('header-search')}>
-                <div className={cx('header-search_box')}>
-                    <input placeholder='Tìm kiếm' />
-                    <div className={cx('input-remove_icon')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </div>
-                    {/* <div className={cx('input-process_icon')}>
+                <Tippy
+                    visible={searchResult.length > 0}
+                    render={attrs => (
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <ProperWrapper>
+                                <h4 className={cx('search-title')}>Account</h4>
+                                <div>
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                </div>
+                            </ProperWrapper>
+                        </div>
+                    )}
+                >
+                    <div className={cx('header-search_box')}>
+                        <input placeholder='Tìm kiếm' />
+                        <div className={cx('input-remove_icon')}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </div>
+                        {/* <div className={cx('input-process_icon')}>
                         <FontAwesomeIcon icon={faSpinner} />
                     </div> */}
-                    <span className={cx('header-input_spliter')}></span>
-                    <button>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                </div>
+                        <span className={cx('header-input_spliter')}></span>
+                        <button>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </div>
+                </Tippy>
             </div>
             <div className={cx('header-nav')}>
                 <div className={cx('upload-container')}>
@@ -120,7 +141,7 @@ function Header() {
                 </div>
                 <div className={cx('header-menu_icon')}>
                     <div className={cx('menu_image')}>
-                        <img src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-1/425505041_951096166584109_1070111714873098817_n.jpg?stp=cp6_dst-jpg_p320x320&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=hDLEHkILYCMAb7RGxGb&_nc_ht=scontent.fhan5-10.fna&oh=00_AfAvQkvozqdRXVByQ6dkpHyjnLZaasOvle8PU6HAUustBg&oe=6621CFDF" alt="" />
+                        <img src="https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-1/425505041_951096166584109_1070111714873098817_n.jpg?stp=cp6_dst-jpg_p200x200&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tlE-8fyBNtkQ7kNvgFYuZZ8&_nc_ht=scontent.fhan15-2.fna&oh=00_AfCWYVcXK0PuHayD5JGxUyhV3xhXX50HDYUcM1BKny2NMg&oe=663FB1DF" alt="" />
                     </div>
                 </div>
             </div>

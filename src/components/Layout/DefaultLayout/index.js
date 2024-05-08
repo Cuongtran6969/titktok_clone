@@ -6,12 +6,8 @@ function DefaultLayout({ children }) {
         <div>
             <Header />
             <div className="body-content">
-                <div>
-                    <Sidebar />
-                </div>
-                <div className="main-content-home">
-                    {children}
-                </div>
+                <Sidebar />
+                {children}
             </div>
         </div>
     )

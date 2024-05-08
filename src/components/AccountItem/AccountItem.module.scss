@@ -1,0 +1,36 @@
+.account-item {
+  display: flex;
+  align-items: center;
+  padding: 9px 16px;
+  &:hover {
+    background-color: rgba(221, 221, 221, 0.21);
+  }
+
+  p {
+    margin: 0;
+  }
+  .account-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .account-info {
+    flex: 1;
+    margin-left: 15px;
+    .account-id {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+    .account-check {
+      color: rgb(32, 213, 236);
+      margin-left: 8px;
+      width: 15px;
+      height: 15px;
+    }
+    .account-name {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #9e9e9e;
+    }
+  }
+}

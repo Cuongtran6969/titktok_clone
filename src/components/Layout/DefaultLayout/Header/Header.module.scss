@@ -11,14 +11,27 @@
   right: 0;
   padding: 1rem;
   box-sizing: border-box;
+  z-index: 1000;
 }
-.header-logo {
+
+.header-search_box,
+.search-result {
+  width: 516px;
+  z-index: 10000;
+}
+.search-result {
+  .search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+    margin: 0;
+  }
 }
 .header-search_box {
   display: flex;
   align-items: center;
   min-width: 200px;
-  width: 516px;
   overflow: hidden;
   border-radius: 2.5rem;
   background-color: rgba(22, 24, 35, 0.06);
