@@ -6,7 +6,7 @@ function DefaultLayout({ children }) {
         <div>
             <Header />
             <div className="body-content">
-                {/* <Sidebar /> */}
+                <Sidebar />
                 {children}
             </div>
         </div>

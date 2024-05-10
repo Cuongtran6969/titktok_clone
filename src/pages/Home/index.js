@@ -9,13 +9,13 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('main-content-home')}>
-            {/* <div className={cx('video-list-container')}>
+            <div className={cx('video-list-container')}>
                 <Video />
                 <Video />
                 <Video />
                 <Video />
                 <Video />
-            </div> */}
+            </div>
         </div>
     )
 }

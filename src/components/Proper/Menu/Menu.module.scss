@@ -8,6 +8,9 @@
     font-size: 1.6rem;
     font-weight: 500;
     width: 100%;
+    &.separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
     &:hover {
       background: rgba(22, 24, 35, 0.03);
     }
@@ -15,4 +18,24 @@
 }
 .menu-proper {
   padding-bottom: 8px;
+}
+.header {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -8px;
+}
+.back-btn {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  left: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+.header-title {
+  font-size: 1.6rem;
+  font-weight: 500;
 }

@@ -91,22 +91,11 @@
   }
   .message-container {
     margin-left: 2.5rem;
-    .message-icon {
-      font-size: 2.5rem;
-    }
   }
   .inbox-container {
     margin-left: 2rem;
     font-size: 1.6rem;
     font-weight: 600;
-  }
-  .header-menu_icon {
-    margin-left: 2rem;
-    img {
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-    }
   }
 }
 .more-btn {
@@ -114,4 +103,14 @@
   margin-left: 28px;
   background-color: transparent;
   padding: 4px 8px;
+}
+.action-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.avatar {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-left: 2rem;
 }
