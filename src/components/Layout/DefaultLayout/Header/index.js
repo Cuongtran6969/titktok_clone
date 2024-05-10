@@ -1,14 +1,30 @@
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarthAmericas, faEllipsisVertical, faKeyboard, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 import { Wrapper as ProperWrapper } from '~/components/Proper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/Proper/Menu';
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAmericas} />,
+        title: 'English',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard and shortcuts',
+    }
+];
 function Header() {
     const [searchResult, setSearch] = useState(["Abc"])
 
@@ -88,7 +104,8 @@ function Header() {
             </div>
             <div className={cx('header-search')}>
                 <Tippy
-                    visible={searchResult.length > 0}
+                    // visible={searchResult.length > 0}
+                    delay={[0, 300]}
                     render={attrs => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <ProperWrapper>
@@ -173,6 +190,11 @@ function Header() {
                 <Button primary>
                     Log in
                 </Button>
+                <Menu items={MENU_ITEMS}>
+                    <button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                    </button>
+                </Menu>
             </div>
         </header>
     )
